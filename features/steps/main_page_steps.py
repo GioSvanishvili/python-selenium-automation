@@ -8,13 +8,12 @@ from time import sleep
 
 @given('Open target.com')
 def open_target(context):
-    context.driver.get('https://target.com')
+    context.app.main_page.open()
 
 
-@when('Search for {item}')
-def search_for_item(context, item):
-    context.driver.find_element(By.ID, 'search').send_keys(f'{item}')
-    context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-test='@web/Search/SearchButton']"))).click()
+@when('Search for {product}')
+def search_for_item(context, product):
+    context.app.header.search_product(product)
 
 
 @when('Click on Target Circle')
