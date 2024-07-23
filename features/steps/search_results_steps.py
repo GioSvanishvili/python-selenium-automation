@@ -28,17 +28,17 @@ def verify_products_name_img(context):
 
 @when("Click 'Add to cart' on the first item")
 def add_to_cart(context):
-    context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper'] [data-test='chooseOptionsButton']"))).click()
+    context.app.search_results_page.add_to_cart()
 
 
 @when("Click 'Add to cart' button on the navigational panel")
 def add_to_cart_navigational(context):
-    context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[data-test='orderPickupButton']"))).click()
+    context.app.navigational_menu.navigational_add_to_cart()
 
 
 @when("Click 'View cart & check out' button")
 def view_cart(context):
-    context.driver.wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, "[href='/cart']"))).click()
+    context.app.navigational_menu.navigational_view_cart()
 
 
 

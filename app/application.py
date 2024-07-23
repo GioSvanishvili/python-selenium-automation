@@ -3,6 +3,8 @@ from pages.header import Header
 from pages.main_page import MainPage
 from pages.base_page import Page
 from pages.search_results_page import SearchResultsPage
+from pages.navigational_menu import NavigationMenu
+from pages.log_in_page import LogInPage
 
 
 class Application:
@@ -14,3 +16,5 @@ class Application:
         self.main_page = MainPage(driver)
         self.search_results_page = SearchResultsPage(driver)
         self.cart_page = CartPage(driver)
+        self.navigational_menu = NavigationMenu(driver)
+        self.log_in_page = LogInPage(driver)

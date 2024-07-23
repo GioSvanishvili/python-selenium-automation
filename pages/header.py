@@ -8,6 +8,10 @@ class Header(Page):
     SEARCH_FIELD = (By.ID, 'search')
     SEARCH_BTN = (By.XPATH, "//button[@data-test='@web/Search/SearchButton']")
     CART_ICON = (By.CSS_SELECTOR, "[href='/icons/Cart.svg#Cart']")
+    SIGN_IN_BTN = (By.CSS_SELECTOR, "[data-test='@web/AccountLink'] span")
+
+    def sign_in(self):
+        self.click(*self.SIGN_IN_BTN)
 
     def search_product(self, product):
         self.input_text(product, *self.SEARCH_FIELD)

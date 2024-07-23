@@ -12,8 +12,7 @@ def verify_cart_is_empty(context):
 
 @then('Verify {cart_amount} item is in cart')
 def verify_items_in_cart(context, cart_amount):
-    items_in_cart = context.driver.find_element(By.CSS_SELECTOR, "[data-test='cart-order-summary'] div span").text
-    assert items_in_cart in cart_amount, f'Expected {cart_amount} but got {items_in_cart}'
+    context.app.cart_page.verify_item_in_cart(cart_amount)
 
 
 
