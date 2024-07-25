@@ -12,6 +12,10 @@ class LogInPage(Page):
     PASSWORD_FIELD = (By.ID, 'password')
     LOGIN_BTN = (By.ID, 'login')
     LOGGED_IN_UESRS_NAME = (By.CSS_SELECTOR, "[data-test='@web/AccountLink']")
+    TC_LINK_BTN = (By.CSS_SELECTOR, "[aria-label*='terms & conditions']")
+
+    def open_log_in_page(self):
+        self.open_url('https://www.target.com/login?client_id=ecom-web-1.0.0&ui_namespace=ui-default&back_button_action=browser&keep_me_signed_in=true&kmsi_default=false&actions=create_session_signin')
 
     def verify_sign_in_page(self):
         actual_result = self.driver.find_element(*self.LOG_IN_PAGE_TXT).text
@@ -25,6 +29,9 @@ class LogInPage(Page):
 
     def login(self):
         self.click(*self.LOGIN_BTN)
+
+    def click_tc(self):
+        self.wait_and_click(*self.TC_LINK_BTN)
 
     def verify_log_in_successful(self):
         sleep(6)
