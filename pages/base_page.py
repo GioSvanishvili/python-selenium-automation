@@ -24,25 +24,25 @@ class Page:
 
     def wait_until_clickable(self, *locator):
         self.wait.until(
-            EC.element_to_be_clickable(locator),
+            EC.element_to_be_clickable(*locator),
             message=f'Element by locator {locator} not clickable'
         )
 
     def wait_and_click(self, *locator):
         self.wait.until(
-            EC.element_to_be_clickable(locator),
+            EC.element_to_be_clickable(*locator),
             message=f'Element by locator {locator} not clickable'
         ).click()
 
     def wait_for_element_appear(self, *locator):
         self.wait.until(
-            EC.visibility_of_element_located(locator),
+            EC.visibility_of_element_located(*locator),
             message=f'Element by locator {locator} did not appear'
         )
 
     def wait_for_element_disappear(self, *locator):
         self.wait.until(
-            EC.invisibility_of_element_located(locator),
+            EC.invisibility_of_element_located(*locator),
             message=f'Element by locator {locator} shown, but should not appear'
         )
 

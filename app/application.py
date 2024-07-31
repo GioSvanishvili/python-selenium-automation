@@ -6,6 +6,7 @@ from pages.search_results_page import SearchResultsPage
 from pages.navigational_menu import NavigationMenu
 from pages.log_in_page import LogInPage
 from pages.terms_and_conditions_page import TermsAndConditionsPage
+from pages.help_page import HelpPage
 
 
 class Application:
@@ -20,3 +21,4 @@ class Application:
         self.navigational_menu = NavigationMenu(driver)
         self.log_in_page = LogInPage(driver)
         self.terms_and_conditions_page = TermsAndConditionsPage(driver)
+        self.help_page = HelpPage(driver)

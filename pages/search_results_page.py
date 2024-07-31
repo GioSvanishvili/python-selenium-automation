@@ -4,6 +4,7 @@ from pages.base_page import Page
 
 
 class SearchResultsPage(Page):
+
     SEARCH_RESULTS_TXT = (By.XPATH, "//div[@data-test='resultsHeading']")
     ADD_TO_CART_BTN = (By.CSS_SELECTOR, "[data-test='@web/site-top-of-funnel/ProductCardWrapper'] [data-test='chooseOptionsButton']")
 

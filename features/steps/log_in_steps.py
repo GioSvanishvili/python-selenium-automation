@@ -33,9 +33,19 @@ def type_email(context):
     context.app.log_in_page.type_email('bjy2000@monshua.com')
 
 
+@when('Type incorrect email address')
+def type_incorrect_email(context):
+    context.app.log_in_page.type_incorrect_email('asdfg@gmail.com')
+
+
 @when('Type the password')
 def type_password(context):
     context.app.log_in_page.type_password('************')
+
+
+@when('Type incorrect password')
+def type_incorrect_password(context):
+    context.app.log_in_page.type_incorrect_password('asdfgh123')
 
 
 @when('Sign in with password')
@@ -46,6 +56,11 @@ def log_in(context):
 @then('Verify Terms and Conditions page is opened')
 def verify_tc_opened(context):
     context.app.terms_and_conditions_page.verify_tc_opened()
+
+
+@then('Verify error message is shown')
+def verify_error_message(context):
+    context.app.log_in_page.verify_error_log_in_message()
 
 
 @then('Verify log in was successful')

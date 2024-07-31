@@ -24,3 +24,12 @@ Feature: Log in page
     And Switch to the newly opened window
     Then Verify Terms and Conditions page is opened
     When User can close new window and switch back to original
+
+  Scenario: User sees error message upon incorrect sign in
+    Given Open target.com
+    When Click on Sign in button
+    And Click on Sign in in navigation panel
+    And Type incorrect email address
+    And Type incorrect password
+    And Sign in with password
+    Then Verify error message is shown
