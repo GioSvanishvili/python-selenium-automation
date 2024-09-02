@@ -24,3 +24,5 @@ class HelpPage(Page):
 
     def verify_delivery_and_pickup_opened(self):
         self.verify_text('Delivery & Pickup', *self.HELP_DELIVERY_AND_PICKUP_TITLE)
+        .
+
